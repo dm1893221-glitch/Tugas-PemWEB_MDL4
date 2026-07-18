@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Image Slideshow</title>
+</head>
+<body>
+
+    <h2>Galeri Gambar</h2>
+
+    <img id="slideshow-image" src="" alt="Slideshow" width="500">
+
+    <br><br>
+
+    <button onclick="gantiGambar(-1)">Previous</button>
+    <button onclick="gantiGambar(1)">Next</button>
+
+    <script>
+
+        var gambar = [
+            "https://placehold.co/500x300/3498db/ffffff?text=Gambar+1",
+            "https://placehold.co/500x300/e74c3c/ffffff?text=Gambar+2",
+            "https://placehold.co/500x300/2ecc71/ffffff?text=Gambar+3",
+            "https://placehold.co/500x300/f39c12/ffffff?text=Gambar+4",
+            "https://placehold.co/500x300/9b59b6/ffffff?text=Gambar+5"
+        ];
+
+        var indexGambar = 0;
+
+        var imageElement = document.getElementById("slideshow-image");
+
+        function tampilkanGambar() {
+
+            imageElement.src = gambar[indexGambar];
+
+        }
+
+        function gantiGambar(arah) {
+
+            indexGambar += arah;
+
+            if (indexGambar >= gambar.length) {
+                indexGambar = 0;
+            }
+
+            if (indexGambar < 0) {
+                indexGambar = gambar.length - 1;
+            }
+
+            tampilkanGambar();
+
+        }
+
+        tampilkanGambar();
+
+    </script>
+
+</body>
+</html>

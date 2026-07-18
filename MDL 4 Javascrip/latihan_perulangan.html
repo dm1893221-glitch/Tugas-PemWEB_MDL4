@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan Perulangan</title>
+</head>
+<body>
+
+    <h2>Daftar Nama Teman Sekelas</h2>
+
+    <ul id="daftar-teman">
+        <!-- Daftar nama akan ditampilkan di sini -->
+    </ul>
+
+    <script>
+
+        var teman = [
+            "Galang",
+            "Firman",
+            "Ikbal",
+            "Danis",
+            "Nabil"
+        ];
+
+        var daftarElement = document.getElementById("daftar-teman");
+
+        for (let i = 0; i < teman.length; i++) {
+            daftarElement.innerHTML += "<li>" + teman[i] + "</li>";
+        }
+
+    </script>
+
+</body>
+</html>

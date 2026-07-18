@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan To-Do List</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+        }
+        button{
+            margin-left:5px;
+        }
+        li{
+            margin-bottom:8px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>To-Do List Sederhana</h2>
+
+    <input type="text" id="input-todo" placeholder="Ketik tugas baru...">
+    <button onclick="tambahTugas()">Tambah</button>
+    <ul id="daftar-tugas"></ul>
+
+    <script>
+
+        var tugas = [];
+        function tambahTugas(){
+            var input = document.getElementById("input-todo");
+            if(input.value != ""){
+                tugas.push(input.value);
+                input.value = "";
+
+                tampilkanDaftar();
+            }
+        }
+        function tampilkanDaftar(){
+            var daftar = document.getElementById("daftar-tugas");
+            daftar.innerHTML = "";
+            for(let i=0;i<tugas.length;i++){
+
+                daftar.innerHTML +=
+                "<li>" + tugas[i] +
+                " <button onclick='hapusTugas(" + i + ")'>Hapus</button></li>";
+            }
+        }
+        function hapusTugas(index){
+            tugas.splice(index,1);
+            tampilkanDaftar();
+        }
+    </script>
+</body>
+</html>

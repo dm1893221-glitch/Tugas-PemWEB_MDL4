@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Event Handling</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align:center;
+            margin-top:40px;
+        }
+
+        img{
+            width:220px;
+            border-radius:10px;
+        }
+
+        input{
+            padding:8px;
+            margin-top:10px;
+        }
+
+        #hasil{
+            color:blue;
+            font-weight:bold;
+        }
+
+        button{
+            margin-top:15px;
+            padding:10px 20px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Latihan Event Handling</h2>
+    <img id="gambar"
+         src="https://placehold.co/220x150/999999/ffffff?text=Selamat+Datang"
+         onmouseover="gantiGambar()"
+         onmouseout="kembaliGambar()">
+
+    <br><br>
+    <label>Masukkan Nama :</label><br>
+    <input type="text" id="nama" onkeyup="tampilkanNama()">
+    <p>Halo, <span id="hasil"></span></p>
+
+    <button onclick="pesan()">Klik Saya</button>
+    <script>
+
+        function gantiGambar(){
+            document.getElementById("gambar").src =
+            "https://placehold.co/220x150/00aaff/ffffff?text=Mouse+Berada+Di+Gambar";
+        }
+        function kembaliGambar(){
+            document.getElementById("gambar").src =
+            "https://placehold.co/220x150/999999/ffffff?text=Selamat+Datang";
+        }
+        function tampilkanNama(){
+            var nama = document.getElementById("nama").value;
+            document.getElementById("hasil").innerHTML = nama;
+        }
+        function pesan(){
+            alert("Terima kasih telah mencoba Event Handling!");
+        }
+    </script>
+
+</body>
+</html>
